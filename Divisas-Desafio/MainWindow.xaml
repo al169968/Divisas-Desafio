@@ -10,6 +10,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Images/MainBG.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <!--CurrencyLayer Grid-->
+        <Grid x:Name="CurrencyLayergrid" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="400">
+            <Label x:Name="CurrencyLayerlbl" Content="null" HorizontalAlignment="Left" Margin="119,161,0,0" VerticalAlignment="Top" FontSize="30"/>
+
+        </Grid>
+        <!--Banxico Grid-->
+        <Grid x:Name="Banxicogrid" HorizontalAlignment="Left" Height="434" VerticalAlignment="Center" Width="400" Margin="400,0,0,0">
+            <Label x:Name="Banxicolbl" Content="null" HorizontalAlignment="Left" Margin="119,161,0,0" VerticalAlignment="Top" FontSize="30"/>
+        </Grid>
+
     </Grid>
 </Window>

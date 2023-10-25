@@ -23,6 +23,29 @@ namespace Divisas_Desafio
         public MainWindow()
         {
             InitializeComponent();
+            showData();
+        }
+        private async void showData()
+        {
+            string currencylayer = "";
+            
+            Apis.CurrencyLayerAPI CurrencyLayer = new Apis.CurrencyLayerAPI();
+            currencylayer = await CurrencyLayer.AsyncApiFunction();
+            Console.WriteLine(currencylayer.ToString());
+
+            Models.banxicoModel obanxicoModel = new Models.banxicoModel();   
+            Apis.BanxicoWebScrapping oBanxico = new Apis.BanxicoWebScrapping();
+            obanxicoModel = (Models.banxicoModel)oBanxico.LoadBanxico();
+
+            Console.WriteLine(obanxicoModel.Pagos.ToString());
+
+            //Banxicolbl.Content = BanxicoUSDtoMXN;
+
+
+            //CurrencyLayerlbl.Content = ocurrencyLayer.quotes.USDMXN.ToString();
+            // Banxicolbl.Content =  
+
+
         }
     }
 }

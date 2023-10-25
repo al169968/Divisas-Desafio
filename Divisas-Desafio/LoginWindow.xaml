@@ -8,90 +8,107 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Title="Inicio de Sesión" Height="600" Width="450" Background="White" >
+        Title="Inicio de Sesión" Height="600" Width="650" Background="White" >
     <Grid>
-        <Grid x:Name="LoginGrid" Margin="0,21,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="430" Height="510" RenderTransformOrigin="0.502,0.459" Visibility="Hidden">
-            <StackPanel Orientation="Horizontal" Margin="82,148,82,148" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+        <Grid HorizontalAlignment="Left" Height="584" Margin="4,0,0,0" VerticalAlignment="Center" Width="237">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Assets/Images/loginBG.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+            <Image x:Name="LogoImg" Height="170" Margin="0,27,0,0" VerticalAlignment="Top" 
+           HorizontalAlignment="Center" Source="/Assets/Images/Logo-Conversor.png" Width="170" 
+           ScrollViewer.VerticalScrollBarVisibility="Auto" 
+           ScrollViewer.HorizontalScrollBarVisibility="Auto" AutomationProperties.IsOffscreenBehavior="Onscreen" RenderTransformOrigin="-0.304,0.535" />
+            
+
+
+        </Grid>
+
+        <Grid x:Name="LoginGrid" Margin="210,21,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="430" Height="510" RenderTransformOrigin="0.502,0.459" Visibility="Hidden">
+
+            <StackPanel Orientation="Horizontal" Margin="82,118,82,148" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Kind="User" Height="40" Width="28" VerticalAlignment="Center"/>
                 <TextBox x:Name="Username" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="180" Style="{DynamicResource MaterialDesignOutlinedTextBox}" SelectionTextBrush="#FF2B0C0C" Background="White" FontSize="14" FontWeight="Bold" materialDesign:HintAssist.Hint="Ingresa tu usuario"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="82,230,82,66" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="82,200,82,66" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <materialDesign:PackIcon Kind="Password" Height="40" Width="28" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 <PasswordBox x:Name="Password" Width="180" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" materialDesign:HintAssist.Hint="•••••••••••" FontSize="14"/>
             </StackPanel>
             <Button x:Name="LoginBtn" Content="Confirmar" HorizontalAlignment="Left"  
                 Margin="152,427,0,0" VerticalAlignment="Top" Width="148" FontSize="16" 
-                Style="{DynamicResource MaterialDesignPaperDarkButton}" Foreground="White" Click="LoginBtn_Click" >
-
+                Style="{DynamicResource MaterialDesignPaperDarkButton}" Foreground="Black" Click="LoginBtn_Click" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Reflect">
                         <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FF0A7EAF" Offset="0.989"/>
+                        <GradientStop Color="#FF84DAFF" Offset="0.989"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="Register" Content="Registrarse" HorizontalAlignment="Left"  
+            <Button x:Name="RegisterBtn" Content="Registrarse" HorizontalAlignment="Left"  
                 Margin="152,468,0,0" VerticalAlignment="Top" Width="148" FontSize="16" 
-                Style="{DynamicResource MaterialDesignPaperDarkButton}" Foreground="White" Click="Register_Click" >
-
+                Style="{DynamicResource MaterialDesignFlatSecondaryButton}" Foreground="Black" Click="Register_Click" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Reflect">
                         <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FFA028DA" Offset="0.989"/>
+                        <GradientStop Color="#FFE4B9F9" Offset="0.989"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-
+            <Label Content="Inicia Sesión" HorizontalAlignment="Left" Margin="-190,187,0,0" VerticalAlignment="Top" FontSize="32 " Background="{x:Null}"/>
         </Grid>
-        <Image x:Name="LogoImg" Height="130" Margin="0,15,0,0" VerticalAlignment="Top" 
-           HorizontalAlignment="Center" Source="/Assets/Images/Logo-Conversor.png" Width="130" 
-           ScrollViewer.VerticalScrollBarVisibility="Auto" 
-           ScrollViewer.HorizontalScrollBarVisibility="Auto" AutomationProperties.IsOffscreenBehavior="Onscreen" OpacityMask="#FFFB9797" />
-        
-        <Grid x:Name="RegisterGrid" Margin="0,21,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="430" Height="510" RenderTransformOrigin="0.502,0.459">
-            <StackPanel Orientation="Horizontal" Margin="82,98,82,148" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+        <Grid x:Name="RegisterGrid" Margin="241,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="409" Height="584" RenderTransformOrigin="0.502,0.459">
+            <StackPanel Orientation="Horizontal" Margin="82,68,82,148" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Kind="UserAdd" Height="40" Width="28" VerticalAlignment="Center"/>
                 <TextBox x:Name="newName" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" 
                          Width="180" Style="{DynamicResource MaterialDesignOutlinedTextBox}" SelectionTextBrush="#FF2B0C0C" 
                          Background="White" FontSize="14" FontWeight="Bold" materialDesign:HintAssist.Hint="Ingresa tu nombre"/>
             </StackPanel>
-            
-            <StackPanel Orientation="Horizontal" Margin="82,228,82,148" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <StackPanel Orientation="Horizontal" Margin="82,198,82,148" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <materialDesign:PackIcon Kind="UserAdd" Height="40" Width="28" VerticalAlignment="Center"/>
-                <TextBox x:Name="NewUsername" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="180" Style="{DynamicResource MaterialDesignOutlinedTextBox}" SelectionTextBrush="#FF2B0C0C" Background="White" FontSize="14" FontWeight="Bold" materialDesign:HintAssist.Hint="Ingresa tu usuario"/>
+                <TextBox x:Name="NewUsername" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="180" Style="{DynamicResource MaterialDesignOutlinedTextBox}" SelectionTextBrush="#FF2B0C0C" Background="White" FontSize="14" FontWeight="Bold" materialDesign:HintAssist.Hint="Ingresa tu usuario" TextChanged="NewUsername_TextChanged"/>
             </StackPanel>
-            
 
 
-            <StackPanel Orientation="Horizontal" Margin="82,270,82,66" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <StackPanel Orientation="Horizontal" Margin="82,240,82,66" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <materialDesign:PackIcon Kind="PasswordAdd" Height="40" Width="28" HorizontalAlignment="Left" VerticalAlignment="Center" />
                 <PasswordBox x:Name="NewPassword" Width="180" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" materialDesign:HintAssist.Hint="•••••••••••" FontSize="14"/>
             </StackPanel>
             <Button x:Name="NewUser" Content="Registrarse" HorizontalAlignment="Left"  
-                Margin="48,436,0,0" VerticalAlignment="Top" Width="148" FontSize="16" 
-                Style="{DynamicResource MaterialDesignPaperDarkButton}" Foreground="White" Click="NewUser_Click" >
+                Margin="48,452,0,0" VerticalAlignment="Top" Width="128" FontSize="18" 
+                Style="{DynamicResource MaterialDesignFlatSecondaryButton}" Foreground="Black" Click="NewUser_Click" Background="#FF6AA8ED" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
 
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Reflect">
-                        <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FF0A7EAF" Offset="0.989"/>
-                    </LinearGradientBrush>
-                </Button.Background>
+
             </Button>
             <Button x:Name="Back" Content="Ya tengo cuenta" HorizontalAlignment="Left"  
-                Margin="238,436,0,0" VerticalAlignment="Top" Width="148" FontSize="16" 
-                Style="{DynamicResource MaterialDesignPaperDarkButton}" Foreground="White" Click="Back_Click" >
+                Margin="221,452,0,0" VerticalAlignment="Top" Width="148" FontSize="16" 
+                Style="{DynamicResource MaterialDesignPaperDarkButton}" Foreground="Black" Click="Back_Click" BorderBrush="#FF0C061B" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
 
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Reflect">
                         <GradientStop Color="Black" Offset="1"/>
-                        <GradientStop Color="#FFA028DA" Offset="0.989"/>
+                        <GradientStop Color="#FFC0C6FB" Offset="0.989"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
 
         </Grid>
+       
 
     </Grid>
 </Window>
